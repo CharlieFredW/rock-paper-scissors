@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function getComputerChoice() {
+            const choices = ['rock', 'paper', 'scissors'];
+            let index = Math.floor(Math.random() * choices.length);
+            const indexValue = choices[index];
+            return indexValue;
+        }
+
+        //console.log(getComputerChoice())
+
+        function playRound(playerSelection, computerSelection) {
+            const computerChoice = getComputerChoice();
+            switch (playerSelection.toLowerCase()) {
+                case 'rock':
+                    if (computerChoice === 'rock') {
+                        return "It's a tie!";
+                    }
+                    else if (computerChoice === 'paper') {
+                        return "Paper beats rock, you loose!";
+                    }
+                    else if (computerChoice === 'scissors') {
+                        return "Rock beats scissors, you win!";
+                    }
+                    break;
+                case 'paper': 
+                    if (computerChoice === 'rock') {
+                        return "Paper beats rock, you win!";
+                    }
+                    else if (computerChoice === 'paper') {
+                        return "It's a tie!";
+                    }
+                    else if (computerChoice === 'scissors') {
+                        return "Scissors beats paper, you loose!";
+                    }
+                    break;
+                case 'scissors': 
+                    if (computerChoice === 'rock') {
+                        return "Rock beats scissors, you loose!";
+                    }
+                    else if (computerChoice === 'paper') {
+                        return "Scisccors beats paper, you win!";
+                    }
+                    else if (computerChoice === 'scissors') {
+                        return "It's a tie!"
+                    }
+                    break;
+                default:
+                    return "Invalid choice, please choose Rock, Paper or Scissors";
+                    break;
+            }
+        }
+
+        const playerSelection = 'rock';
+        const computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection))
+
+
+    </script>
+    
+</body>
+</html>
