@@ -12,6 +12,7 @@
         let playerScore = 0;
         let computerScore = 0;
 
+        //Turns the different options of choice into and array. By doing this it will choose a random number from the array using Math.random()
         function getComputerChoice() {
             const choices = ['rock', 'paper', 'scissors'];
             let index = Math.floor(Math.random() * choices.length);
@@ -21,6 +22,7 @@
 
         //console.log(getComputerChoice())
 
+        //Uses a switch case to determin the different outcomes of the players selection
         function playRound(playerSelection, computerSelection) {
             const computerChoice = getComputerChoice();
             switch (playerSelection.toLowerCase()) {
@@ -75,6 +77,7 @@
             }
         }
 
+        //Creates a game of a given length and promts the user to enter a choice until the game is over to determin a winner of the game.
         function game() {
             let gameLength = 5;
             for (let gameCount = 0; gameCount < gameLength; gameCount++) {
