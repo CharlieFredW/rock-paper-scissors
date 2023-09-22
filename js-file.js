@@ -66,8 +66,33 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const rockBtn = document.querySelector('#rock-button');
+const paperBtn = document.querySelector('#paper-button');
+const scissorsBtn = document.querySelector('#scissors-button');
+const resultText = document.querySelector('#resultText');
+const scoreHuman = document.querySelector('#scoreHuman');
+const scoreComputer = document.querySelector('#scoreComputer');
+
+rockBtn.addEventListener('click', () => {
+    resultText.textContent = playRound('rock', getComputerChoice());
+    scoreHuman.textContent = playerScore;
+    scoreComputer.textContent = computerScore;
+  });
+
+paperBtn.addEventListener('click', () => {
+    resultText.textContent = playRound('paper', getComputerChoice());
+    scoreHuman.textContent = playerScore;
+    scoreComputer.textContent = computerScore;
+});
+
+scissorsBtn.addEventListener('click', () => {
+    resultText.textContent = playRound('scissors', getComputerChoice());
+    scoreHuman.textContent = playerScore;
+    scoreComputer.textContent = computerScore;
+  });
+
 //Creates a game of a given length and promts the user to enter a choice until the game is over to determin a winner of the game.
-function game() {
+/* function game() {
     let gameLength = 5;
     for (let gameCount = 0; gameCount < gameLength; gameCount++) {
         const playerChoice = prompt("Enter your choice: Rock, Paper or Scissors").toLowerCase();
@@ -84,3 +109,4 @@ function game() {
 }
 
 console.log(game());
+*/
