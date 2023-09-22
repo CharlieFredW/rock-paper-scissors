@@ -73,23 +73,45 @@ const resultText = document.querySelector('#resultText');
 const scoreHuman = document.querySelector('#scoreHuman');
 const scoreComputer = document.querySelector('#scoreComputer');
 
+
+
 rockBtn.addEventListener('click', () => {
     resultText.textContent = playRound('rock', getComputerChoice());
     scoreHuman.textContent = playerScore;
     scoreComputer.textContent = computerScore;
+    checkGame(playerScore, computerScore);
   });
 
 paperBtn.addEventListener('click', () => {
     resultText.textContent = playRound('paper', getComputerChoice());
     scoreHuman.textContent = playerScore;
     scoreComputer.textContent = computerScore;
+    checkGame(playerScore, computerScore);
 });
 
 scissorsBtn.addEventListener('click', () => {
     resultText.textContent = playRound('scissors', getComputerChoice());
     scoreHuman.textContent = playerScore;
     scoreComputer.textContent = computerScore;
+    checkGame(playerScore, computerScore);
   });
+
+  function checkGame() {
+    if (playerScore === 5) {
+        playerScore = 0;
+        computerScore = 0;
+        alert("Congratulations. You win the game!");
+        return resultText.textContent = "Congratulations. You win the game!";
+    }
+    else if (computerScore === 5) {
+        playerScore = 0;
+        computerScore = 0;
+        alert("OH NO, the computer bit your bites. Quick try again to save the world!");
+        return resultText.textContent = "OH NO, the computer bit your bites. Quick try again to save the world!";
+    }
+  }
+
+
 
 //Creates a game of a given length and promts the user to enter a choice until the game is over to determin a winner of the game.
 /* function game() {
